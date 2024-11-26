@@ -1,1 +1,1 @@
-# Kidney_integration
+# Kidney_Atlas
