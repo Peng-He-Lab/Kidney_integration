@@ -1,4 +1,5 @@
 *.h5ad
-data
-scratch
+.ipynb_checkpoints/
 _archive
+notebooks
+hca_integration_toolbox/

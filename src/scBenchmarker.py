@@ -219,8 +219,8 @@ class scIB():
             self._scvi_()
         if self.args.scanvi or self.args.all:
             self._scanvi_()
-        if self.args.bbknn or self.args.all:
-            self._bbknn_()
+        # if self.args.bbknn or self.args.all:
+        #     self._bbknn_()
         if self.args.scgen or self.args.all:
             self._scgen_()
         # if self.args.fastmnn or self.args.all:
