@@ -13,4 +13,4 @@ Despite numerous single-cell and single-nucleus transcriptomics studies, differe
 Find the trained models of the HKCA to use with your own dataset at https://zenodo.org/records/21468481
 
 ## Try the CellorNuc function to evaluate dissociation biases for single cell or nucleus RNAseq datasets:
-  Example notebook: notebooks/CellorNuc.ipynb
+  Example notebook: [notebooks/CellorNuc.ipynb](https://github.com/Peng-He-Lab/Kidney_integration/blob/main/notebooks/CellorNuc.ipynb)
