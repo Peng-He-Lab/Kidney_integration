@@ -12,5 +12,5 @@ Despite numerous single-cell and single-nucleus transcriptomics studies, differe
 ## Models for automated annotation (Celltypist or scArches)
 Find the trained models of the HKCA to use with your own dataset at https://zenodo.org/records/21468481
 
-## Try the CellorNuc function to evaluate dissociation biases:
-  Example notebook: 
+## Try the CellorNuc function to evaluate dissociation biases for single cell or nucleus RNAseq datasets:
+  Example notebook: notebooks/CellorNuc.ipynb
