@@ -289,24 +289,13 @@
 
   .lineage summary:hover { background: var(--paper-warm); }
 
-  .lineage summary .meta {
-    font-weight: 400;
-    font-size: .86rem;
-    color: var(--ink-faint);
-    white-space: nowrap;
-  }
-
-  .lineage summary .meta::after {
+  .lineage summary::after {
     content: "+";
-    display: inline-block;
-    width: 1.4em;
-    margin-left: 10px;
-    text-align: right;
     font-size: 1.1rem;
     color: var(--accent);
   }
 
-  .lineage[open] summary .meta::after { content: "\2013"; }
+  .lineage[open] summary::after { content: "\2013"; }
 
   .table-scroll {
     overflow-x: auto;
@@ -641,15 +630,10 @@
         <h2>Cell type markers</h2>
       </div>
 
-      <p class="lede">
-        Top 20 marker genes for each harmonized cell state, grouped by lineage. Expand a lineage to
-        browse its table; wide tables scroll sideways.
-      </p>
-
       <div class="markers">
         <!-- markers:start -->
         <details class="lineage">
-          <summary><span>Proximal epithelium</span><span class="meta">12 cell states &middot; top 20 markers</span></summary>
+          <summary>Proximal epithelium</summary>
           <div class="table-scroll">
             <table>
               <thead><tr><th scope="col">#</th><th scope="col">PEC</th><th scope="col">PTS1</th><th scope="col">PTS1/S2</th><th scope="col">PTS2</th><th scope="col">PTS2/S3</th><th scope="col">PTS3</th><th scope="col">aPT</th><th scope="col">aPTS1/S2</th><th scope="col">aPTS3</th><th scope="col">cycPT</th><th scope="col">dPT</th><th scope="col">dPTS1/S2</th></tr></thead>
@@ -680,7 +664,7 @@
           <p class="foot"><a href="Tables/Epithelial_proximal_harmonized%20%281%29.csv" download>Download CSV</a></p>
         </details>
         <details class="lineage">
-          <summary><span>Distal epithelium</span><span class="meta">28 cell states &middot; top 20 markers</span></summary>
+          <summary>Distal epithelium</summary>
           <div class="table-scroll">
             <table>
               <thead><tr><th scope="col">#</th><th scope="col">ATL</th><th scope="col">CD-IC-A</th><th scope="col">CD-IC-B</th><th scope="col">CD-PC</th><th scope="col">CNT-IC-A</th><th scope="col">CNT-PC</th><th scope="col">DCT1</th><th scope="col">DCT2</th><th scope="col">DTL1</th><th scope="col">DTL1/2</th><th scope="col">DTL2</th><th scope="col">DTL3</th><th scope="col">MD</th><th scope="col">PapE</th><th scope="col">PapE1</th><th scope="col">PapE2</th><th scope="col">TAL</th><th scope="col">TAL_medullary</th><th scope="col">aATL_CCL2+</th><th scope="col">aCD-IC-B</th><th scope="col">aCD-PC</th><th scope="col">aCNT-PC</th><th scope="col">aDCT</th><th scope="col">aTAL</th><th scope="col">dCD-ICB</th><th scope="col">dCD-PC</th><th scope="col">dDTL1/2</th><th scope="col">dPapE</th></tr></thead>
@@ -711,7 +695,7 @@
           <p class="foot"><a href="Tables/Epithelial_distal_harmonized%20%281%29.csv" download>Download CSV</a></p>
         </details>
         <details class="lineage">
-          <summary><span>Endothelial</span><span class="meta">8 cell states &middot; top 20 markers</span></summary>
+          <summary>Endothelial</summary>
           <div class="table-scroll">
             <table>
               <thead><tr><th scope="col">#</th><th scope="col">EC-AEA</th><th scope="col">EC-AEA_SULF1+</th><th scope="col">EC-AVR</th><th scope="col">EC-DVR</th><th scope="col">EC-Glomerular_cap</th><th scope="col">EC-LYM</th><th scope="col">EC-PTC</th><th scope="col">EC-angiogenic</th></tr></thead>
@@ -742,7 +726,7 @@
           <p class="foot"><a href="Tables/Endothelial_harmonized%20%281%29.csv" download>Download CSV</a></p>
         </details>
         <details class="lineage">
-          <summary><span>Stromal</span><span class="meta">13 cell states &middot; top 20 markers</span></summary>
+          <summary>Stromal</summary>
           <div class="table-scroll">
             <table>
               <thead><tr><th scope="col">#</th><th scope="col">Fibroblasts_INHBA+</th><th scope="col">Fibroblasts_NEGR1+</th><th scope="col">Fibroblasts_adventitial</th><th scope="col">Fibroblasts_cortex</th><th scope="col">MC</th><th scope="col">MC_REN+</th><th scope="col">Medullary_fibroblasts</th><th scope="col">Myofibroblasts</th><th scope="col">Norn_cells</th><th scope="col">Pericytes</th><th scope="col">Perivascular_fibroblasts</th><th scope="col">VSMC</th><th scope="col">VSMC_REN+</th></tr></thead>

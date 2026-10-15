@@ -18,8 +18,7 @@ def table_html(name, path):
     header, body = rows[0], rows[1:]
     href = urllib.parse.quote(path)
     out = [f'        <details class="lineage">',
-           f'          <summary><span>{html.escape(name)}</span>'
-           f'<span class="meta">{len(header)} cell states &middot; top {len(body)} markers</span></summary>',
+           f'          <summary>{html.escape(name)}</summary>',
            f'          <div class="table-scroll">',
            f'            <table>',
            f'              <thead><tr><th scope="col">#</th>' +
