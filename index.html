@@ -257,6 +257,107 @@
     content: " \2192";
   }
 
+  /* ---------- cell type markers ---------- */
+
+  .markers {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .lineage {
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .lineage[open] { border-color: #c3d2ce; }
+
+  .lineage summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+
+  .lineage summary::-webkit-details-marker { display: none; }
+
+  .lineage summary:hover { background: var(--paper-warm); }
+
+  .lineage summary .meta {
+    font-weight: 400;
+    font-size: .86rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+
+  .lineage summary .meta::after {
+    content: "+";
+    display: inline-block;
+    width: 1.4em;
+    margin-left: 10px;
+    text-align: right;
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+
+  .lineage[open] summary .meta::after { content: "\2013"; }
+
+  .table-scroll {
+    overflow-x: auto;
+    border-top: 1px solid var(--line);
+  }
+
+  .lineage table {
+    border-collapse: collapse;
+    font-size: .88rem;
+    white-space: nowrap;
+  }
+
+  .lineage th,
+  .lineage td {
+    padding: 6px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+
+  .lineage thead th {
+    background: var(--paper-warm);
+    font-weight: 600;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .lineage tbody th {
+    position: sticky;
+    left: 0;
+    background: var(--paper);
+    font-weight: 400;
+    color: var(--ink-faint);
+    border-right: 1px solid var(--line);
+  }
+
+  .lineage thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    border-right: 1px solid var(--line);
+  }
+
+  .lineage tbody tr:last-child th,
+  .lineage tbody tr:last-child td { border-bottom: 0; }
+
+  .lineage .foot {
+    margin: 0;
+    padding: 10px 18px;
+    border-top: 1px solid var(--line);
+    font-size: .84rem;
+  }
+
   .lede {
     font-size: 1.02rem;
     line-height: 1.7;
@@ -530,6 +631,148 @@
           <iframe class="viewer-iframe" data-src="HKCAsn_3DUmap.html" aria-hidden="true"
                   title="Interactive 3D UMAP, single nucleus" allowfullscreen></iframe>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="markers">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cell type markers</h2>
+      </div>
+
+      <p class="lede">
+        Top 20 marker genes for each harmonized cell state, grouped by lineage. Expand a lineage to
+        browse its table; wide tables scroll sideways.
+      </p>
+
+      <div class="markers">
+        <!-- markers:start -->
+        <details class="lineage">
+          <summary><span>Proximal epithelium</span><span class="meta">12 cell states &middot; top 20 markers</span></summary>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">#</th><th scope="col">PEC</th><th scope="col">PTS1</th><th scope="col">PTS1/S2</th><th scope="col">PTS2</th><th scope="col">PTS2/S3</th><th scope="col">PTS3</th><th scope="col">aPT</th><th scope="col">aPTS1/S2</th><th scope="col">aPTS3</th><th scope="col">cycPT</th><th scope="col">dPT</th><th scope="col">dPTS1/S2</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>IGFBP7</td><td>UGT2B7</td><td>DHFR</td><td>GSTA1</td><td>MTRNR2L12</td><td>MT1H</td><td>MALAT1</td><td>MALAT1</td><td>NEAT1</td><td>DIAPH3</td><td>NDUFA4L2</td><td>TMSB10</td></tr>
+                <tr><th scope="row">2</th><td>MALAT1</td><td>TMBIM6</td><td>MTRNR2L12</td><td>FABP1</td><td>DHFR</td><td>MT1F</td><td>LMNA</td><td>S100A6</td><td>MALAT1</td><td>EZH2</td><td>NNMT</td><td>IL32</td></tr>
+                <tr><th scope="row">3</th><td>BCAM</td><td>SLC7A8</td><td>AC105402.3</td><td>SUCLG1</td><td>AC105402.3</td><td>MT2A</td><td>KLF6</td><td>NEAT1</td><td>SPP1</td><td>DLEU2</td><td>JUNB</td><td>PPDPF</td></tr>
+                <tr><th scope="row">4</th><td>CCN2</td><td>SLC22A8</td><td>ALB</td><td>SLC25A5</td><td>DCXR</td><td>MT1E</td><td>NEAT1</td><td>TMSB10</td><td>ACTB</td><td>BRCA1</td><td>ZFP36</td><td>TMSB4X</td></tr>
+                <tr><th scope="row">5</th><td>IFITM3</td><td>CUBN</td><td>MTRNR2L8</td><td>PRAP1</td><td>PCK1</td><td>RBP5</td><td>CLU</td><td>ZBTB20</td><td>B2M</td><td>APOLD1</td><td>ANGPTL4</td><td>MT1F</td></tr>
+                <tr><th scope="row">6</th><td>CFH</td><td>ASS1</td><td>PRODH2</td><td>UGT2B7</td><td>MIOX</td><td>UQCRQ</td><td>HLA-B</td><td>PDE4D</td><td>ZBTB20</td><td>MIR924HG</td><td>EGR1</td><td>UQCRQ</td></tr>
+                <tr><th scope="row">7</th><td>PDE1A</td><td>SLC4A4</td><td>FAM151A</td><td>ATP5MC3</td><td>RBP4</td><td>SOD1</td><td>ZSWIM6</td><td>VIM</td><td>PKHD1</td><td>ATAD2</td><td>VIM</td><td>GSTP1</td></tr>
+                <tr><th scope="row">8</th><td>ALDH1A2</td><td>SLC16A9</td><td>PTH1R</td><td>NAT8</td><td>ACY1</td><td>TXN</td><td>FOSB</td><td>PKHD1</td><td>TMSB10</td><td>CENPP</td><td>IGFBP3</td><td>POLR2L</td></tr>
+                <tr><th scope="row">9</th><td>SYNE1</td><td>PAH</td><td>ACSM2B</td><td>ECHS1</td><td>MTRNR2L8</td><td>HINT1</td><td>ANXA2</td><td>TMSB4X</td><td>HLA-A</td><td>SMC4</td><td>HLA-B</td><td>PFN1</td></tr>
+                <tr><th scope="row">10</th><td>ZBTB20</td><td>MME</td><td>CUBN</td><td>UBB</td><td>AGXT</td><td>GPX4</td><td>WSB1</td><td>HLA-A</td><td>PDE4D</td><td>NUSAP1</td><td>RNASET2</td><td>B2M</td></tr>
+                <tr><th scope="row">11</th><td>S100A6</td><td>CTSB</td><td>SLC4A4</td><td>NDUFA4</td><td>ALDH6A1</td><td>SUCLG1</td><td>JUNB</td><td>IGFBP7</td><td>FOS</td><td>IQGAP3</td><td>LDHA</td><td>S100A1</td></tr>
+                <tr><th scope="row">12</th><td>TPM1</td><td>SLC13A3</td><td>SLC13A3</td><td>PRDX1</td><td>BHMT</td><td>NDUFA4</td><td>TRIO</td><td>RHEX</td><td>CD74</td><td>CENPF</td><td>GNG11</td><td>ATP5ME</td></tr>
+                <tr><th scope="row">13</th><td>SPARC</td><td>FAM151A</td><td>PDZD2</td><td>KHK</td><td>GLYATL1</td><td>DCXR</td><td>TNFRSF12A</td><td>HLA-B</td><td>RBPMS</td><td>BRIP1</td><td>CA9</td><td>MT2A</td></tr>
+                <tr><th scope="row">14</th><td>CD9</td><td>PTH1R</td><td>AC096577.1</td><td>MDH1</td><td>FP236383.3</td><td>ATP5ME</td><td>FNDC3B</td><td>B2M</td><td>PARD3</td><td>TOP2A</td><td>COL23A1</td><td>GABARAP</td></tr>
+                <tr><th scope="row">15</th><td>DUSP1</td><td>LRP2</td><td>SLC22A6</td><td>COX7B</td><td>GPT</td><td>COX5B</td><td>SAMD4A</td><td>ITGB8</td><td>HLA-B</td><td>AC068587.4</td><td>S100A10</td><td>MT1H</td></tr>
+                <tr><th scope="row">16</th><td>VIM</td><td>DPEP1</td><td>AFM</td><td>UQCRQ</td><td>MPC1</td><td>UQCR11</td><td>ZBTB20</td><td>PTH2R</td><td>RHOB</td><td>PRIM2</td><td>SOCS3</td><td>CRYAB</td></tr>
+                <tr><th scope="row">17</th><td>CRIM1</td><td>SLC22A6</td><td>MIOX</td><td>DPEP1</td><td>PHYH</td><td>ATP5MG</td><td>PKM</td><td>LINC01320</td><td>CD24</td><td>CENPK</td><td>DUSP1</td><td>S100A11</td></tr>
+                <tr><th scope="row">18</th><td>BICC1</td><td>SLC5A12</td><td>AGXT2</td><td>CMBL</td><td>HAO2</td><td>UBB</td><td>PARD3</td><td>S100A11</td><td>STEAP1B</td><td>CEP128</td><td>HLA-C</td><td>SPP1</td></tr>
+                <tr><th scope="row">19</th><td>TMSB4X</td><td>PRODH2</td><td>FGGY</td><td>CXCL14</td><td>FMO5</td><td>MIOX</td><td>HLA-A</td><td>KLF6</td><td>MAML2</td><td>MELK</td><td>FOSB</td><td>C12orf75</td></tr>
+                <tr><th scope="row">20</th><td>ARHGAP29</td><td>SLC6A19</td><td>AC098588.3</td><td>TXN</td><td>CYP17A1</td><td>COX4I1</td><td>ELL2</td><td>PARD3</td><td>LINC01320</td><td>RRM2</td><td>MYOCOS</td><td>CD74</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="foot"><a href="Tables/Epithelial_proximal_harmonized%20%281%29.csv" download>Download CSV</a></p>
+        </details>
+        <details class="lineage">
+          <summary><span>Distal epithelium</span><span class="meta">28 cell states &middot; top 20 markers</span></summary>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">#</th><th scope="col">ATL</th><th scope="col">CD-IC-A</th><th scope="col">CD-IC-B</th><th scope="col">CD-PC</th><th scope="col">CNT-IC-A</th><th scope="col">CNT-PC</th><th scope="col">DCT1</th><th scope="col">DCT2</th><th scope="col">DTL1</th><th scope="col">DTL1/2</th><th scope="col">DTL2</th><th scope="col">DTL3</th><th scope="col">MD</th><th scope="col">PapE</th><th scope="col">PapE1</th><th scope="col">PapE2</th><th scope="col">TAL</th><th scope="col">TAL_medullary</th><th scope="col">aATL_CCL2+</th><th scope="col">aCD-IC-B</th><th scope="col">aCD-PC</th><th scope="col">aCNT-PC</th><th scope="col">aDCT</th><th scope="col">aTAL</th><th scope="col">dCD-ICB</th><th scope="col">dCD-PC</th><th scope="col">dDTL1/2</th><th scope="col">dPapE</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>CRIP1</td><td>ADGRF5</td><td>KRT7</td><td>AQP2</td><td>ATP6V0D2</td><td>TMEM52B</td><td>SLC12A3</td><td>SLC12A3</td><td>CRYAB</td><td>FOXP2</td><td>CRYAB</td><td>NUPR1</td><td>PLCB1</td><td>ZBTB7C</td><td>DHRS2</td><td>PDLIM1</td><td>SLC12A1</td><td>SLC12A1</td><td>SPP1</td><td>WDR72</td><td>FXYD4</td><td>TRPM3</td><td>DCDC2</td><td>UMOD</td><td>KRT7</td><td>PDE4D</td><td>RHEX</td><td>PDLIM1</td></tr>
+                <tr><th scope="row">2</th><td>WFDC2</td><td>SLC26A7</td><td>ATP6V1G3</td><td>FXYD4</td><td>SLC26A7</td><td>WNK1</td><td>TMEM52B</td><td>ESRRG</td><td>NUPR1</td><td>CASC15</td><td>SERPINA1</td><td>CRYAB</td><td>ERBB4</td><td>LINC00511</td><td>KRT19</td><td>MIR205HG</td><td>UMOD</td><td>GPC5</td><td>WFDC2</td><td>SLC4A9</td><td>AQP2</td><td>RALYL</td><td>SCN2A</td><td>SLC12A1</td><td>IGFBP5</td><td>ABTB2</td><td>PKHD1</td><td>MIR205HG</td></tr>
+                <tr><th scope="row">3</th><td>ITM2C</td><td>ATP6V0D2</td><td>IGFBP5</td><td>AQP3</td><td>MUC20</td><td>HSD11B2</td><td>WNK1</td><td>AL355612.1</td><td>TPM1</td><td>TPM1</td><td>HLA-B</td><td>TPM1</td><td>PKHD1</td><td>PPARG</td><td>SPINK1</td><td>KRT19</td><td>PLCB1</td><td>UMOD</td><td>SAT1</td><td>SLC26A4</td><td>AQP3</td><td>CADPS2</td><td>KCNIP4</td><td>MT1G</td><td>ATP6V0C</td><td>GLIS3</td><td>OXR1</td><td>KRT17</td></tr>
+                <tr><th scope="row">4</th><td>TMSB10</td><td>SLC4A1</td><td>SLC4A9</td><td>ST6GAL1</td><td>TMEM213</td><td>CALB1</td><td>AL355612.1</td><td>TRPM7</td><td>JUNB</td><td>SATB2</td><td>HLA-C</td><td>FOXP2</td><td>ZBTB20</td><td>ELF3</td><td>S100P</td><td>KRT17</td><td>EGF</td><td>AC092078.2</td><td>IFITM3</td><td>RCAN2</td><td>TMSB4X</td><td>SLC8A1</td><td>DACH1</td><td>CLDN16</td><td>SLC4A9</td><td>GRIP1</td><td>BICC1</td><td>FABP5</td></tr>
+                <tr><th scope="row">5</th><td>CLDN10</td><td>APOE</td><td>CD9</td><td>SCNN1G</td><td>C12orf75</td><td>SLC8A1</td><td>TRPM7</td><td>EGF</td><td>SOD3</td><td>DOCK11</td><td>CLU</td><td>PAX8</td><td>KCNIP4</td><td>KRT19</td><td>PSCA</td><td>FXYD3</td><td>KNG1</td><td>CACNA2D3</td><td>MMP7</td><td>LINC01187</td><td>ST6GAL1</td><td>ARL15</td><td>ACSL4</td><td>PPP1R1A</td><td>ATP6V1G3</td><td>ANK3</td><td>FOXP2</td><td>S100P</td></tr>
+                <tr><th scope="row">6</th><td>S100A11</td><td>C12orf75</td><td>TMEM213</td><td>GATA3</td><td>MAGI1</td><td>RHCG</td><td>EGF</td><td>AC019197.1</td><td>H3F3B</td><td>PHYHIPL</td><td>TACSTD2</td><td>IGFBP3</td><td>FNDC3B</td><td>SNX31</td><td>SNCG</td><td>S100P</td><td>ESRRG</td><td>PLCB1</td><td>IFITM2</td><td>SEMA3C</td><td>GATA3</td><td>SOX5</td><td>TRABD2B</td><td>ESRRB</td><td>WFDC2</td><td>PRKCA</td><td>ZBTB20</td><td>KRT13</td></tr>
+                <tr><th scope="row">7</th><td>SLPI</td><td>ATP6V1G3</td><td>ATP6V0C</td><td>PTGER1</td><td>ADGRF5</td><td>CA2</td><td>CNNM2</td><td>KANK1</td><td>EGR1</td><td>PROM1</td><td>HLA-A</td><td>ARHGAP29</td><td>IMMP2L</td><td>AHR</td><td>ADIRF</td><td>SNCG</td><td>GPC5</td><td>CLDN10-AS1</td><td>BCAM</td><td>DGKI</td><td>TPM4</td><td>TEX41</td><td>ITGB6</td><td>PLCB1</td><td>TMEM213</td><td>PWRN1</td><td>LINC01320</td><td>LAMB3</td></tr>
+                <tr><th scope="row">8</th><td>SOD3</td><td>TMEM213</td><td>CDA</td><td>NDRG1</td><td>SLC4A1</td><td>CA12</td><td>KNG1</td><td>ERBB4</td><td>STEAP1B</td><td>UTRN</td><td>RARRES2</td><td>UGT2B7</td><td>PTPRG</td><td>HPGD</td><td>FXYD3</td><td>ADIRF</td><td>SLC16A12</td><td>PHACTR1</td><td>ITGB6</td><td>PACRG</td><td>KRT19</td><td>HSD11B2</td><td>SLC8A1</td><td>BICDL1</td><td>ATP6V0B</td><td>BMPR1B</td><td>LINC00472</td><td>FXYD3</td></tr>
+                <tr><th scope="row">9</th><td>TIMP1</td><td>ATP6AP2</td><td>SLC26A4</td><td>HSD11B2</td><td>RCAN2</td><td>SERPINA5</td><td>CACNB4</td><td>LINC00472</td><td>FOS</td><td>UNC5D</td><td>SOD3</td><td>CPE</td><td>SAMD4A</td><td>ACOXL</td><td>LINC00511</td><td>EEF1G</td><td>PLCL1</td><td>RP1</td><td>SLPI</td><td>PDE1C</td><td>BTG2</td><td>LINC01099</td><td>KITLG</td><td>ANK2</td><td>CA12</td><td>RBPMS</td><td>PAX8</td><td>EEF1G</td></tr>
+                <tr><th scope="row">10</th><td>CLDN3</td><td>RNASEK</td><td>LINC01187</td><td>TMSB4X</td><td>CLNK</td><td>COX7B</td><td>SERPINA5</td><td>APBB2</td><td>PPDPF</td><td>EVC</td><td>CYSTM1</td><td>SOD3</td><td>BICC1</td><td>ACER2</td><td>PPARG</td><td>FABP5</td><td>PDE1A</td><td>ENOX1</td><td>CXCL14</td><td>EPS8</td><td>PTGER1</td><td>BMPR1B</td><td>FAM155A</td><td>MAST4</td><td>PLAAT4</td><td>SOX5</td><td>IMMP2L</td><td>GPX2</td></tr>
+                <tr><th scope="row">11</th><td>SPP1</td><td>RACGAP1</td><td>ATP6V0D2</td><td>BMPR1B</td><td>ATP6V0A4</td><td>CLCNKB</td><td>ESRRG</td><td>CNNM2</td><td>ZFP36</td><td>GALNT14</td><td>CPE</td><td>CLU</td><td>ADAMTS9-AS2</td><td>ATP8B1</td><td>AHR</td><td>LINC00511</td><td>CLCN5</td><td>EGF</td><td>NNMT</td><td>IQGAP2</td><td>NDRG1</td><td>PRKG1</td><td>MFHAS1</td><td>SIM2</td><td>STEAP1B</td><td>MYO1E</td><td>UTRN</td><td>ACOXL</td></tr>
+                <tr><th scope="row">12</th><td>ANXA2</td><td>CLNK</td><td>CA12</td><td>TRPM3</td><td>IL18</td><td>EMX1</td><td>KANK1</td><td>WNK1</td><td>S100A13</td><td>LINC01320</td><td>NUPR1</td><td>IGFBP5</td><td>AKAP13</td><td>DHRS3</td><td>KRT7</td><td>BTF3</td><td>CYFIP2</td><td>SLC16A12</td><td>STEAP1B</td><td>GRB10</td><td>PWRN1</td><td>FRAS1</td><td>DLGAP1</td><td>SLC16A12</td><td>CDA</td><td>CADPS2</td><td>KCNMB2</td><td>C19orf33</td></tr>
+                <tr><th scope="row">13</th><td>KRT7</td><td>ATP6V0B</td><td>ATP6V0B</td><td>CLU</td><td>ATP6V1C2</td><td>ATP5MD</td><td>AC019197.1</td><td>CCSER1</td><td>IER2</td><td>SLC44A5</td><td>MYL6</td><td>UTRN</td><td>CACNA2D3</td><td>CD96</td><td>GPX2</td><td>ANXA1</td><td>CACNA2D3</td><td>RBFOX1</td><td>ADAMTS1</td><td>ATP6V0D2</td><td>CLU</td><td>PIK3C2G</td><td>NLGN1</td><td>FOXP2</td><td>CD9</td><td>ARL15</td><td>UGT2B7</td><td>AHR</td></tr>
+                <tr><th scope="row">14</th><td>TMPRSS4</td><td>DMRT2</td><td>IL18</td><td>TPM4</td><td>RHCG</td><td>ATP5ME</td><td>APBB2</td><td>ARHGAP6</td><td>JUN</td><td>EPHA7</td><td>MAL</td><td>CRNDE</td><td>MAML2</td><td>ETV6</td><td>TNFRSF21</td><td>RACK1</td><td>CASR</td><td>CLCN5</td><td>KCNIP4</td><td>RNF152</td><td>RCAN1</td><td>PWRN1</td><td>MIR4435-2HG</td><td>CACNA2D3</td><td>RNASEK</td><td>NFAT5</td><td>RBPMS</td><td>KRT5</td></tr>
+                <tr><th scope="row">15</th><td>PCSK1N</td><td>RCAN2</td><td>ATP6AP2</td><td>SCNN1B</td><td>IGFBP5</td><td>TEX41</td><td>SPP1</td><td>MAML2</td><td>CITED2</td><td>RHEX</td><td>IGFBP3</td><td>BICC1</td><td>SYNE2</td><td>BCAS1</td><td>PDLIM1</td><td>PERP</td><td>HIP1</td><td>SGIP1</td><td>CD59</td><td>MAGI3</td><td>PAPPA</td><td>APCDD1L-DT</td><td>WWTR1</td><td>EGF</td><td>ID3</td><td>AC019197.1</td><td>ADAMTS9-AS2</td><td>SNCG</td></tr>
+                <tr><th scope="row">16</th><td>S100A10</td><td>RHCG</td><td>WFDC2</td><td>CTSH</td><td>LINC01187</td><td>NDUFB1</td><td>KLHL3</td><td>LRMDA</td><td>UGT2B7</td><td>CNTN4</td><td>AKR1C1</td><td>NEBL</td><td>PARD3</td><td>EHF</td><td>CYP3A5</td><td>SFN</td><td>PPP1R1A</td><td>PCDH9</td><td>TIMP1</td><td>PDZD2</td><td>PFKFB3</td><td>TMTC2</td><td>ITGA2</td><td>CYFIP2</td><td>ATP6V0A4</td><td>PRKAG2</td><td>NEBL</td><td>KRT19</td></tr>
+                <tr><th scope="row">17</th><td>CXCL14</td><td>ATP6V0C</td><td>RCAN2</td><td>CDH16</td><td>EPS8</td><td>CDH16</td><td>DACH1</td><td>CACNB4</td><td>AC007906.2</td><td>KCNMB2</td><td>AKR1B1</td><td>GMDS</td><td>LINC00472</td><td>ALOX5</td><td>AC019117.2</td><td>C19orf33</td><td>NUDT4</td><td>GP2</td><td>SOD2</td><td>DCLK2</td><td>BMPR1B</td><td>SCNN1G</td><td>MYO1B</td><td>PDE1A</td><td>LINC01187</td><td>KAZN</td><td>TPM1</td><td>LINC00511</td></tr>
+                <tr><th scope="row">18</th><td>CRYAB</td><td>SLIT2</td><td>HEPACAM2</td><td>PIK3C2G</td><td>PLAAT4</td><td>PVALB</td><td>KL</td><td>FHIT</td><td>ID4</td><td>EGFR</td><td>S100A13</td><td>HLA-C</td><td>TRIO</td><td>CARD11</td><td>HPGD</td><td>AGR2</td><td>MFSD4A</td><td>LINC01606</td><td>RHOB</td><td>CA8</td><td>PDE4D</td><td>PRKAG2</td><td>ADGRL2</td><td>MGAT5</td><td>HLA-B</td><td>PAPPA</td><td>CRYAB</td><td>SEMA4A</td></tr>
+                <tr><th scope="row">19</th><td>TSPAN1</td><td>RTN4</td><td>ATP6V0A4</td><td>EPCAM</td><td>DMRT2</td><td>UQCRQ</td><td>FMN1</td><td>PKHD1</td><td>ODC1</td><td>CLIC4</td><td>TPM1</td><td>PFKFB3</td><td>NHS</td><td>TNFAIP2</td><td>MIR205HG</td><td>GPX2</td><td>BICDL1</td><td>AL159156.1</td><td>CCL2</td><td>CA12</td><td>SCNN1G</td><td>KCNJ15</td><td>ARHGAP29</td><td>PTPN4</td><td>HSPA8</td><td>TRPM3</td><td>P3H2</td><td>CD55</td></tr>
+                <tr><th scope="row">20</th><td>MMP7</td><td>TMEM101</td><td>RNASEK</td><td>PDE4D</td><td>KIT</td><td>AC019197.1</td><td>MAML2</td><td>PLCL1</td><td>IFITM3</td><td>UGT2B7</td><td>FAU</td><td>TACSTD2</td><td>PATJ</td><td>TIAM1</td><td>FABP5</td><td>AHR</td><td>PCDH9</td><td>CACNB2</td><td>DCDC2</td><td>CELF2</td><td>HSD11B2</td><td>GRIP1</td><td>ARHGEF3</td><td>SLC4A7</td><td>IER2</td><td>LRMDA</td><td>NUPR1</td><td>BTF3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="foot"><a href="Tables/Epithelial_distal_harmonized%20%281%29.csv" download>Download CSV</a></p>
+        </details>
+        <details class="lineage">
+          <summary><span>Endothelial</span><span class="meta">8 cell states &middot; top 20 markers</span></summary>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">#</th><th scope="col">EC-AEA</th><th scope="col">EC-AEA_SULF1+</th><th scope="col">EC-AVR</th><th scope="col">EC-DVR</th><th scope="col">EC-Glomerular_cap</th><th scope="col">EC-LYM</th><th scope="col">EC-PTC</th><th scope="col">EC-angiogenic</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>SRP14</td><td>SERPINE2</td><td>PLVAP</td><td>SPARCL1</td><td>EMCN</td><td>CCL21</td><td>HSPG2</td><td>INSR</td></tr>
+                <tr><th scope="row">2</th><td>CLDN5</td><td>JAG1</td><td>MARCKS</td><td>CCL14</td><td>IGFBP5</td><td>TFF3</td><td>CA4</td><td>IGFBP7</td></tr>
+                <tr><th scope="row">3</th><td>SRGN</td><td>KCTD12</td><td>GPM6A</td><td>VWF</td><td>CRHBP</td><td>MMRN1</td><td>PLVAP</td><td>SPARC</td></tr>
+                <tr><th scope="row">4</th><td>AQP1</td><td>MGP</td><td>MIR99AHG</td><td>IGFBP7</td><td>PLAT</td><td>TFPI</td><td>RGCC</td><td>VWF</td></tr>
+                <tr><th scope="row">5</th><td>ARL15</td><td>ABI3BP</td><td>CD59</td><td>ACKR1</td><td>SYNE1</td><td>FABP4</td><td>DNASE1L3</td><td>COL4A1</td></tr>
+                <tr><th scope="row">6</th><td>VIM</td><td>CRIP1</td><td>COL3A1</td><td>SPRY1</td><td>SOST</td><td>CD36</td><td>RAMP3</td><td>GRB10</td></tr>
+                <tr><th scope="row">7</th><td>ADAMTS6</td><td>LTBP4</td><td>LINC02147</td><td>ANO2</td><td>PLPP3</td><td>PKHD1L1</td><td>CCL14</td><td>MAGI1</td></tr>
+                <tr><th scope="row">8</th><td>SERPINE2</td><td>PDE3A</td><td>CD9</td><td>SLC2A3</td><td>TGFBR2</td><td>SEMA3A</td><td>NAV3</td><td>RGCC</td></tr>
+                <tr><th scope="row">9</th><td>SOX5</td><td>MECOM</td><td>TFPI</td><td>FAU</td><td>EHD3</td><td>NRP2</td><td>TMEM88</td><td>GALNT18</td></tr>
+                <tr><th scope="row">10</th><td>TM4SF1</td><td>VIM</td><td>ADIRF</td><td>CLU</td><td>MGP</td><td>LAPTM5</td><td>CEACAM1</td><td>EDNRB</td></tr>
+                <tr><th scope="row">11</th><td>MECOM</td><td>SRP14</td><td>TMTC2</td><td>NNMT</td><td>NTN4</td><td>TBX1</td><td>H19</td><td>FLT1</td></tr>
+                <tr><th scope="row">12</th><td>PALMD</td><td>FBLN2</td><td>IGFBP7</td><td>RALGAPA2</td><td>PLPP1</td><td>DOCK5</td><td>KCNIP4</td><td>ESM1</td></tr>
+                <tr><th scope="row">13</th><td>ENPP2</td><td>SULF1</td><td>NR2F2</td><td>ADAMTS9</td><td>ITGA8</td><td>PROX1</td><td>RBP5</td><td>PLVAP</td></tr>
+                <tr><th scope="row">14</th><td>KCTD12</td><td>CAV1</td><td>IGFBP4</td><td>SNHG29</td><td>NRG3</td><td>IGFBP7</td><td>AC105402.3</td><td>IVNS1ABP</td></tr>
+                <tr><th scope="row">15</th><td>SOX17</td><td>CLDN5</td><td>MYL12A</td><td>VIM</td><td>HECW2</td><td>MPP7</td><td>ESM1</td><td>FYN</td></tr>
+                <tr><th scope="row">16</th><td>MCTP1</td><td>LTC4S</td><td>PMP22</td><td>NAMPT</td><td>CMTM8</td><td>ZFPM2</td><td>VAV3</td><td>HSPG2</td></tr>
+                <tr><th scope="row">17</th><td>THSD4</td><td>FBLN5</td><td>S100A10</td><td>PDLIM1</td><td>EPAS1</td><td>EFNA5</td><td>PAX8</td><td>SPARCL1</td></tr>
+                <tr><th scope="row">18</th><td>SLC14A1</td><td>ELN</td><td>FN1</td><td>EMP1</td><td>FCN3</td><td>LAMA4</td><td>PKHD1</td><td>COL4A2</td></tr>
+                <tr><th scope="row">19</th><td>S100A4</td><td>ARL15</td><td>DNASE1L3</td><td>NACA</td><td>HLA-C</td><td>PRKG1</td><td>PATJ</td><td>PRSS23</td></tr>
+                <tr><th scope="row">20</th><td>A2M</td><td>CLU</td><td>FAM167B</td><td>EEF1G</td><td>MEG3</td><td>MRC1</td><td>BICC1</td><td>ELMO1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="foot"><a href="Tables/Endothelial_harmonized%20%281%29.csv" download>Download CSV</a></p>
+        </details>
+        <details class="lineage">
+          <summary><span>Stromal</span><span class="meta">13 cell states &middot; top 20 markers</span></summary>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">#</th><th scope="col">Fibroblasts_INHBA+</th><th scope="col">Fibroblasts_NEGR1+</th><th scope="col">Fibroblasts_adventitial</th><th scope="col">Fibroblasts_cortex</th><th scope="col">MC</th><th scope="col">MC_REN+</th><th scope="col">Medullary_fibroblasts</th><th scope="col">Myofibroblasts</th><th scope="col">Norn_cells</th><th scope="col">Pericytes</th><th scope="col">Perivascular_fibroblasts</th><th scope="col">VSMC</th><th scope="col">VSMC_REN+</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>DCN</td><td>C7</td><td>DCN</td><td>FBLN1</td><td>POSTN</td><td>MECOM</td><td>ZBTB20</td><td>C7</td><td>IGFBP6</td><td>RGS5</td><td>CNN1</td><td>ADIRF</td><td>TRPM3</td></tr>
+                <tr><th scope="row">2</th><td>LUM</td><td>LUM</td><td>FBLN1</td><td>CFD</td><td>GATA3</td><td>TRPM3</td><td>NEAT1</td><td>DCN</td><td>FBLN1</td><td>CPE</td><td>ACTA2</td><td>MYH11</td><td>GNAS</td></tr>
+                <tr><th scope="row">3</th><td>CCN1</td><td>FBLN5</td><td>GSN</td><td>SRPX</td><td>MECOM</td><td>PLCL1</td><td>LTBP1</td><td>LUM</td><td>DCN</td><td>DLC1</td><td>MFAP4</td><td>PLN</td><td>REN</td></tr>
+                <tr><th scope="row">4</th><td>CCN2</td><td>DCN</td><td>CCDC80</td><td>NBL1</td><td>PRKCA</td><td>PIP5K1B</td><td>ATRNL1</td><td>FBLN5</td><td>MIR99AHG</td><td>NDUFA4L2</td><td>PDLIM3</td><td>CRIP1</td><td>MECOM</td></tr>
+                <tr><th scope="row">5</th><td>C1R</td><td>CST3</td><td>SERPINF1</td><td>MFAP4</td><td>LMO7</td><td>PDE10A</td><td>SOX5</td><td>LAMA2</td><td>DHRS3</td><td>TM4SF1</td><td>FLNA</td><td>MUSTN1</td><td>HPSE2</td></tr>
+                <tr><th scope="row">6</th><td>FBLN5</td><td>NEGR1</td><td>CFD</td><td>LTBP4</td><td>SYNE1</td><td>ROBO1</td><td>PLCB1</td><td>TSHZ2</td><td>FXYD2</td><td>HIGD1B</td><td>MYLK</td><td>SOD3</td><td>PLCL1</td></tr>
+                <tr><th scope="row">7</th><td>GPC3</td><td>GGT5</td><td>IGFBP6</td><td>LUM</td><td>AGTR1</td><td>LIMCH1</td><td>PTPRM</td><td>PLXDC2</td><td>BNC2</td><td>CACNB2</td><td>MYH11</td><td>TPM2</td><td>PIP5K1B</td></tr>
+                <tr><th scope="row">8</th><td>C7</td><td>CXCL12</td><td>EFEMP1</td><td>SERPINF1</td><td>MYL12A</td><td>GNAS</td><td>SYT1</td><td>COL1A2</td><td>GSN</td><td>EPS8</td><td>SYNPO2</td><td>SPARCL1</td><td>LIMCH1</td></tr>
+                <tr><th scope="row">9</th><td>FBLN1</td><td>C1S</td><td>C1S</td><td>COL1A1</td><td>APOE</td><td>SAMD12</td><td>AKAP12</td><td>ITGA1</td><td>MFAP5</td><td>PHLDA1</td><td>CKB</td><td>ACTA2</td><td>NRXN3</td></tr>
+                <tr><th scope="row">10</th><td>MOXD1</td><td>GPX3</td><td>LUM</td><td>COL1A2</td><td>ENG</td><td>PDE7B</td><td>LSAMP</td><td>NEGR1</td><td>SFRP4</td><td>INPP4B</td><td>DES</td><td>CLU</td><td>PCDH9</td></tr>
+                <tr><th scope="row">11</th><td>SERPINE1</td><td>PDGFRA</td><td>C1R</td><td>PTGDS</td><td>MYL12B</td><td>KCNQ5</td><td>HPSE2</td><td>SVEP1</td><td>GPX3</td><td>ADGRF5</td><td>CSRP1</td><td>RERGL</td><td>TSC22D1</td></tr>
+                <tr><th scope="row">12</th><td>C1S</td><td>TIMP1</td><td>C3</td><td>DCN</td><td>FABP4</td><td>AC114316.1</td><td>FBXL7</td><td>ATRNL1</td><td>IGF1</td><td>COL25A1</td><td>DMD</td><td>TSC22D1</td><td>ITGA8</td></tr>
+                <tr><th scope="row">13</th><td>RARRES2</td><td>TSHZ2</td><td>S100A10</td><td>CACNA1D</td><td>EMCN</td><td>COL25A1</td><td>CA8</td><td>CYP1B1</td><td>S100A10</td><td>HS6ST3</td><td>SORBS1</td><td>SNCG</td><td>SLC8A1</td></tr>
+                <tr><th scope="row">14</th><td>SFRP1</td><td>PRSS23</td><td>ANXA1</td><td>MMP2</td><td>AQP1</td><td>PITPNC1</td><td>BMPR1B</td><td>MOXD1</td><td>BICC1</td><td>COX4I2</td><td>AEBP1</td><td>SORBS2</td><td>SDK1</td></tr>
+                <tr><th scope="row">15</th><td>CYP1B1</td><td>ADH1B</td><td>ANXA2</td><td>IGFBP2</td><td>S100A11</td><td>RAPGEF4</td><td>DACH1</td><td>COL3A1</td><td>CXCL14</td><td>FRMD3</td><td>NEXN</td><td>NTRK3</td><td>NTRK3</td></tr>
+                <tr><th scope="row">16</th><td>TCF21</td><td>RARRES2</td><td>NNMT</td><td>PAMR1</td><td>TINAGL1</td><td>PCDH9</td><td>SAMD4A</td><td>PDGFRA</td><td>MGST1</td><td>SLIT3</td><td>SVIL</td><td>FLNA</td><td>SOD3</td></tr>
+                <tr><th scope="row">17</th><td>AKAP12</td><td>MOXD1</td><td>EMP1</td><td>COL6A2</td><td>SRGN</td><td>PDE1A</td><td>HSPH1</td><td>MEIS2</td><td>CCDC80</td><td>MAP1B</td><td>FP236383.3</td><td>CNN1</td><td>PDE10A</td></tr>
+                <tr><th scope="row">18</th><td>CEBPD</td><td>COL3A1</td><td>SRPX</td><td>DHFR</td><td>BST2</td><td>MEF2C</td><td>ZSWIM6</td><td>GGT5</td><td>APOD</td><td>ADGRB3</td><td>COL6A2</td><td>KCNMA1</td><td>ATP5F1E</td></tr>
+                <tr><th scope="row">19</th><td>LITAF</td><td>CYP1B1</td><td>CLU</td><td>MEG3</td><td>CYBA</td><td>PPARG</td><td>FMNL2</td><td>COL4A4</td><td>OGN</td><td>SLC38A11</td><td>TPM1</td><td>CSRP1</td><td>CSMD1</td></tr>
+                <tr><th scope="row">20</th><td>GGT5</td><td>SELENOP</td><td>SERPING1</td><td>APCDD1</td><td>PHTF2</td><td>PDE3A</td><td>PRKCA</td><td>GPC3</td><td>H19</td><td>GJA4</td><td>PCDH7</td><td>CSRP2</td><td>GRID2</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="foot"><a href="Tables/Stromal_harmonized%20%281%29.csv" download>Download CSV</a></p>
+        </details>
+        <!-- markers:end -->
       </div>
     </div>
   </section>
