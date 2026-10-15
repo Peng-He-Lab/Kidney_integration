@@ -9,17 +9,11 @@ Despite numerous single-cell and single-nucleus transcriptomics studies, differe
 
 <img width="2291" height="1368" alt="Asset 2" src="https://github.com/user-attachments/assets/a8b49782-0c6b-48c8-8859-6ff248a19b65" />
 
-## Data portal
+## Data Website
 
-`index.html` is the landing page for the atlas (abstract, data downloads, interactive embeddings):
+Explore the dataset via the website:
 https://zhou119010475.github.io/Kidney_integration/
 
-## Interactive 3D UMAPs
-
-Hosted via GitHub Pages (raw links in this repo won't render interactively — GitHub serves `.html` files as plain text):
-
-- [HKCAsc_3DUmap](https://zhou119010475.github.io/Kidney_integration/HKCAsc_3DUmap.html) — single-cell 3D UMAP
-- [HKCAsn_3DUmap](https://zhou119010475.github.io/Kidney_integration/HKCAsn_3DUmap.html) — single-nucleus 3D UMAP
 
 ## Models for automated annotation (Celltypist or scArches)
 Find the trained models of the HKCA to use with your own dataset at https://zenodo.org/records/21468481

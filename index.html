@@ -336,13 +336,6 @@
 
   .viewer-status[hidden] { display: none; }
 
-  .viewer-status .spin {
-    display: block;
-    font-size: .82rem;
-    color: var(--ink-faint);
-    margin-top: 6px;
-  }
-
   /* ---------- citation ---------- */
 
   .cite {
@@ -491,11 +484,11 @@
         <div class="viewer-bar">
           <div class="viewer-tabs" role="tablist" aria-label="3D UMAP embedding">
             <button type="button" class="vtab" role="tab" aria-selected="true"
-                    data-viewer="HKCAsc_3DUmap.html" data-label="single cell" data-size="&asymp;11 MB">
+                    data-viewer="HKCAsc_3DUmap.html" data-label="single cell">
               Single cell
             </button>
             <button type="button" class="vtab" role="tab" aria-selected="false"
-                    data-viewer="HKCAsn_3DUmap.html" data-label="single nucleus" data-size="&asymp;4 MB">
+                    data-viewer="HKCAsn_3DUmap.html" data-label="single nucleus">
               Single nucleus
             </button>
           </div>
@@ -633,8 +626,7 @@
       fit(frame);
     } else {
       var info = describe(src);
-      status.innerHTML = "Loading the " + info.label + " embedding &hellip;" +
-        '<span class="spin">' + info.size + " &mdash; the plot appears once the download finishes.</span>";
+      status.innerHTML = "Loading the " + info.label + " embedding &hellip;";
       status.hidden = false;
     }
   }
