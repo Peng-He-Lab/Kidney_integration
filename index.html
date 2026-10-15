@@ -153,6 +153,34 @@
 
   .abstract p:last-child { margin-bottom: 0; }
 
+  .abstract-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 36px 44px;
+    align-items: center;
+  }
+
+  .abstract-figure { margin: 0; }
+
+  .abstract-figure a { display: block; }
+
+  .abstract-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .abstract-figure figcaption {
+    margin-top: 10px;
+    font-size: .82rem;
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 860px) {
+    .abstract-grid { grid-template-columns: 1fr; }
+  }
+
   /* ---------- resource cards ---------- */
 
   .cards {
@@ -407,6 +435,7 @@
       <div class="section-head">
         <h2>Abstract</h2>
       </div>
+      <div class="abstract-grid">
       <div class="abstract">
         <p>
           The human kidney contains highly specialized cell populations that coordinate filtration,
@@ -424,6 +453,17 @@
           high-quality cells (816,895) / nuclei (215,308) and resolves 120 harmonized cell states
           across epithelial, endothelial, stromal, mural, immune, and neural-associated compartments.
         </p>
+      </div>
+      <figure class="abstract-figure">
+        <a href="figures/HKCA_overview.png" target="_blank" rel="noopener">
+          <img src="figures/HKCA_overview_web.png" width="1400" height="836"
+               alt="UMAP embeddings of the Human Kidney Cell Atlas: the joint lineage-level embedding above, the single-cell atlas (HKCA-cell) at left and the single-nucleus atlas (HKCA-nucleus) at right, each coloured by harmonized cell state.">
+        </a>
+        <figcaption>
+          UMAPs of the HKCA: lineage-level embedding (top), single-cell atlas (left) and
+          single-nucleus atlas (right), coloured by harmonized cell state. Click to enlarge.
+        </figcaption>
+      </figure>
       </div>
     </div>
   </section>
