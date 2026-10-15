@@ -190,6 +190,25 @@
     gap: 12px;
   }
 
+  .card-preview {
+    margin: -22px -22px 4px;
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .card-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    transition: transform .25s ease;
+  }
+
+  .card:hover .card-preview img,
+  .card:focus-visible .card-preview img { transform: scale(1.03); }
+
   .icon {
     display: grid;
     place-items: center;
@@ -438,6 +457,10 @@
 
         <a class="card" href="https://cellxgene.cziscience.com/e/121427d5-8ae6-492a-a890-da4fa1a8a02a.cxg/"
            target="_blank" rel="noopener">
+          <div class="card-preview">
+            <img src="figures/HKCA_sc_umap.png" width="1200" height="720" loading="lazy"
+                 alt="2D UMAP of the single-cell atlas, coloured by harmonized cell state">
+          </div>
           <div class="card-top">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -452,6 +475,10 @@
 
         <a class="card" href="https://cellxgene.cziscience.com/e/3ad58406-2ed3-4729-b213-a9bd89bebb32.cxg/"
            target="_blank" rel="noopener">
+          <div class="card-preview">
+            <img src="figures/HKCA_sn_umap.png" width="1200" height="720" loading="lazy"
+                 alt="2D UMAP of the single-nucleus atlas, coloured by harmonized cell state">
+          </div>
           <div class="card-top">
             <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
