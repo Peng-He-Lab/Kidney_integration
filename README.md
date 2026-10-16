@@ -12,7 +12,7 @@ Despite numerous single-cell and single-nucleus transcriptomics studies, differe
 ## Data Website
 
 Explore the dataset via the website:
-https://zhou119010475.github.io/Kidney_integration/
+[https://peng-he-lab.github.io/Kidney_integration/]
 
 
 ## Models for automated annotation (Celltypist or scArches)
