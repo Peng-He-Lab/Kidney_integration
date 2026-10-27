@@ -13,7 +13,7 @@ Despite numerous single-cell and single-nucleus transcriptomics studies, differe
 
 Explore the dataset via the website:
 [https://peng-he-lab.github.io/Kidney_integration/]
-https://doi.org/10.57772%2Fcap.lr1qubc8lvq53byicflpmnedecs2.1073
+Cell Annotation platform: https://doi.org/10.57772%2Fcap.lr1qubc8lvq53byicflpmnedecs2.1073
 
 ## Models for automated annotation (Celltypist or scArches)
 Find the trained models of the HKCA to use with your own dataset at https://zenodo.org/records/21468481
